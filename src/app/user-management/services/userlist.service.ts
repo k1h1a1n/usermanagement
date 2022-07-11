@@ -17,4 +17,13 @@ export class UserlistService {
    };
    return this.http.get<any>(`${environment.baseUrl}/users`);
   }
+  createUser(input:UserList):Observable<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+   };
+   return this.http.post<any>(`${environment.baseUrl}/users`,input,httpOptions);
+  }
+  deleteUser(id: number){
+   return this.http.delete<any>(`${environment.baseUrl}/users/${id}`);
+  }
 }

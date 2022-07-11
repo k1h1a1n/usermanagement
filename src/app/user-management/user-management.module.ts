@@ -6,7 +6,9 @@ import { UserListComponent } from './component/user-list/user-list.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     UserListComponent
@@ -16,7 +18,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatIconModule,
     CommonModule,
     UserManagementRoutingModule,
-    MatPaginatorModule
-  ]
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    ReactiveFormsModule
+  ],
+  providers : [MatDialog]
 })
 export class UserManagementModule { }
